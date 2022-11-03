@@ -1,5 +1,5 @@
 tasks:
-  - init: /workspace/rustlings-basics/install.sh
+  - init: /workspace/rustlings-advanced/install.sh
     command: /workspace/.cargo/bin/rustlings watch
 
 vscode:
