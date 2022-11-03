@@ -1,267 +1,267 @@
-# INTRO
-
-[[exercises]]
-name = "intro1"
-path = "exercises/intro/intro1.rs"
-mode = "compile"
-hint = """
-Remove the I AM NOT DONE comment in the exercises/intro/intro1.rs file
-to move on to the next exercise."""
-
-[[exercises]]
-name = "intro2"
-path = "exercises/intro/intro2.rs"
-mode = "compile"
-hint = """
-Add an argument after the format string."""
-
-# VARIABLES
-
-[[exercises]]
-name = "variables1"
-path = "exercises/variables/variables1.rs"
-mode = "compile"
-hint = """
-The declaration on line 8 is missing a keyword that is needed in Rust
-to create a new variable binding."""
-
-#[[exercises]]
-#name = "variables2"
-#path = "exercises/variables/variables2.rs"
-#mode = "compile"
-#hint = """
-#The compiler message is saying that Rust cannot infer the type that the
-#variable binding `x` has with what is given here.
-#What happens if you annotate line 7 with a type annotation?
-#What if you give x a value?
-#What if you do both?
-#What type should x be, anyway?
-#What if x is the same type as 10? What if it's a different type?"""
+# # INTRO
 
 # [[exercises]]
-# name = "variables3"
-# path = "exercises/variables/variables3.rs"
+# name = "intro1"
+# path = "exercises/intro/intro1.rs"
 # mode = "compile"
 # hint = """
-# Oops! In this exercise, we have a variable binding that we've created on
-# line 7, and we're trying to use it on line 8, but we haven't given it a
-# value. We can't print out something that isn't there; try giving x a value!
-# This is an error that can cause bugs that's very easy to make in any
-# programming language -- thankfully the Rust compiler has caught this for us!"""
-
-[[exercises]]
-name = "variables4"
-path = "exercises/variables/variables4.rs"
-mode = "compile"
-hint = """
-In Rust, variable bindings are immutable by default. But here we're trying
-to reassign a different value to x! There's a keyword we can use to make
-a variable binding mutable instead."""
+# Remove the I AM NOT DONE comment in the exercises/intro/intro1.rs file
+# to move on to the next exercise."""
 
 # [[exercises]]
-# name = "variables5"
-# path = "exercises/variables/variables5.rs"
+# name = "intro2"
+# path = "exercises/intro/intro2.rs"
 # mode = "compile"
 # hint = """
-# In variables4 we already learned how to make an immutable variable mutable
-# using a special keyword. Unfortunately this doesn't help us much in this exercise
-# because we want to assign a different typed value to an existing variable. Sometimes
-# you may also like to reuse existing variable names because you are just converting
-# values to different types like in this exercise.
-# Fortunately Rust has a powerful solution to this problem: 'Shadowing'!
-# You can read more about 'Shadowing' in the book's section 'Variables and Mutability':
-# https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#shadowing
-# Try to solve this exercise afterwards using this technique."""
+# Add an argument after the format string."""
 
-[[exercises]]
-name = "variables6"
-path = "exercises/variables/variables6.rs"
-mode = "compile"
-hint = """
-We know about variables and mutability, but there is another important type of
-variable available: constants.
-Constants are always immutable and they are declared with keyword 'const' rather
-than keyword 'let'.
-Constants types must also always be annotated.
-
-Read more about constants and the differences between variables and constants under 'Constants' in the book's section 'Variables and Mutability':
-https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#constants
-"""
-
-# FUNCTIONS
-
-[[exercises]]
-name = "functions1"
-path = "exercises/functions/functions1.rs"
-mode = "compile"
-hint = """
-This main function is calling a function that it expects to exist, but the
-function doesn't exist. It expects this function to have the name `call_me`.
-It expects this function to not take any arguments and not return a value.
-Sounds a lot like `main`, doesn't it?"""
-
-[[exercises]]
-name = "functions2"
-path = "exercises/functions/functions2.rs"
-mode = "compile"
-hint = """
-Rust requires that all parts of a function's signature have type annotations,
-but `call_me` is missing the type annotation of `num`."""
+# # VARIABLES
 
 # [[exercises]]
-# name = "functions3"
-# path = "exercises/functions/functions3.rs"
+# name = "variables1"
+# path = "exercises/variables/variables1.rs"
 # mode = "compile"
 # hint = """
-# This time, the function *declaration* is okay, but there's something wrong
-# with the place where we're calling the function.
-# As a reminder, you can freely play around with different solutions in Rustlings!
-# Watch mode will only jump to the next exercise if you remove the I AM NOT DONE comment."""
+# The declaration on line 8 is missing a keyword that is needed in Rust
+# to create a new variable binding."""
 
-[[exercises]]
-name = "functions4"
-path = "exercises/functions/functions4.rs"
-mode = "compile"
-hint = """
-The error message points to line 17 and says it expects a type after the
-`->`. This is where the function's return type should be -- take a look at
-the `is_even` function for an example!
+# #[[exercises]]
+# #name = "variables2"
+# #path = "exercises/variables/variables2.rs"
+# #mode = "compile"
+# #hint = """
+# #The compiler message is saying that Rust cannot infer the type that the
+# #variable binding `x` has with what is given here.
+# #What happens if you annotate line 7 with a type annotation?
+# #What if you give x a value?
+# #What if you do both?
+# #What type should x be, anyway?
+# #What if x is the same type as 10? What if it's a different type?"""
 
-Also: Did you figure out that, technically, u32 would be the more fitting type
-for the prices here, since they can't be negative? If so, kudos!"""
-
-[[exercises]]
-name = "functions5"
-path = "exercises/functions/functions5.rs"
-mode = "compile"
-hint = """
-This is a really common error that can be fixed by removing one character.
-It happens because Rust distinguishes between expressions and statements: expressions return a value based on their operand(s), and statements simply return a () type which behaves just like `void` in C/C++ language.
-We want to return a value of `i32` type from the `square` function, but it is returning a `()` type...
-They are not the same. There are two solutions:
-1. Add a `return` ahead of `num * num;`
-2. remove `;`, make it to be `num * num`"""
-
-# IF
-
-[[exercises]]
-name = "if1"
-path = "exercises/if/if1.rs"
-mode = "test"
-hint = """
-It's possible to do this in one line if you would like!
-Some similar examples from other languages:
-- In C(++) this would be: `a > b ? a : b`
-- In Python this would be:  `a if a > b else b`
-Remember in Rust that:
-- the `if` condition does not need to be surrounded by parentheses
-- `if`/`else` conditionals are expressions
-- Each condition is followed by a `{}` block."""
+# # [[exercises]]
+# # name = "variables3"
+# # path = "exercises/variables/variables3.rs"
+# # mode = "compile"
+# # hint = """
+# # Oops! In this exercise, we have a variable binding that we've created on
+# # line 7, and we're trying to use it on line 8, but we haven't given it a
+# # value. We can't print out something that isn't there; try giving x a value!
+# # This is an error that can cause bugs that's very easy to make in any
+# # programming language -- thankfully the Rust compiler has caught this for us!"""
 
 # [[exercises]]
-# name = "if2"
-# path = "exercises/if/if2.rs"
+# name = "variables4"
+# path = "exercises/variables/variables4.rs"
+# mode = "compile"
+# hint = """
+# In Rust, variable bindings are immutable by default. But here we're trying
+# to reassign a different value to x! There's a keyword we can use to make
+# a variable binding mutable instead."""
+
+# # [[exercises]]
+# # name = "variables5"
+# # path = "exercises/variables/variables5.rs"
+# # mode = "compile"
+# # hint = """
+# # In variables4 we already learned how to make an immutable variable mutable
+# # using a special keyword. Unfortunately this doesn't help us much in this exercise
+# # because we want to assign a different typed value to an existing variable. Sometimes
+# # you may also like to reuse existing variable names because you are just converting
+# # values to different types like in this exercise.
+# # Fortunately Rust has a powerful solution to this problem: 'Shadowing'!
+# # You can read more about 'Shadowing' in the book's section 'Variables and Mutability':
+# # https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#shadowing
+# # Try to solve this exercise afterwards using this technique."""
+
+# [[exercises]]
+# name = "variables6"
+# path = "exercises/variables/variables6.rs"
+# mode = "compile"
+# hint = """
+# We know about variables and mutability, but there is another important type of
+# variable available: constants.
+# Constants are always immutable and they are declared with keyword 'const' rather
+# than keyword 'let'.
+# Constants types must also always be annotated.
+
+# Read more about constants and the differences between variables and constants under 'Constants' in the book's section 'Variables and Mutability':
+# https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#constants
+# """
+
+# # FUNCTIONS
+
+# [[exercises]]
+# name = "functions1"
+# path = "exercises/functions/functions1.rs"
+# mode = "compile"
+# hint = """
+# This main function is calling a function that it expects to exist, but the
+# function doesn't exist. It expects this function to have the name `call_me`.
+# It expects this function to not take any arguments and not return a value.
+# Sounds a lot like `main`, doesn't it?"""
+
+# [[exercises]]
+# name = "functions2"
+# path = "exercises/functions/functions2.rs"
+# mode = "compile"
+# hint = """
+# Rust requires that all parts of a function's signature have type annotations,
+# but `call_me` is missing the type annotation of `num`."""
+
+# # [[exercises]]
+# # name = "functions3"
+# # path = "exercises/functions/functions3.rs"
+# # mode = "compile"
+# # hint = """
+# # This time, the function *declaration* is okay, but there's something wrong
+# # with the place where we're calling the function.
+# # As a reminder, you can freely play around with different solutions in Rustlings!
+# # Watch mode will only jump to the next exercise if you remove the I AM NOT DONE comment."""
+
+# [[exercises]]
+# name = "functions4"
+# path = "exercises/functions/functions4.rs"
+# mode = "compile"
+# hint = """
+# The error message points to line 17 and says it expects a type after the
+# `->`. This is where the function's return type should be -- take a look at
+# the `is_even` function for an example!
+
+# Also: Did you figure out that, technically, u32 would be the more fitting type
+# for the prices here, since they can't be negative? If so, kudos!"""
+
+# [[exercises]]
+# name = "functions5"
+# path = "exercises/functions/functions5.rs"
+# mode = "compile"
+# hint = """
+# This is a really common error that can be fixed by removing one character.
+# It happens because Rust distinguishes between expressions and statements: expressions return a value based on their operand(s), and statements simply return a () type which behaves just like `void` in C/C++ language.
+# We want to return a value of `i32` type from the `square` function, but it is returning a `()` type...
+# They are not the same. There are two solutions:
+# 1. Add a `return` ahead of `num * num;`
+# 2. remove `;`, make it to be `num * num`"""
+
+# # IF
+
+# [[exercises]]
+# name = "if1"
+# path = "exercises/if/if1.rs"
 # mode = "test"
 # hint = """
-# For that first compiler error, it's important in Rust that each conditional
-# block returns the same type! To get the tests passing, you will need a couple
-# conditions checking different input values."""
+# It's possible to do this in one line if you would like!
+# Some similar examples from other languages:
+# - In C(++) this would be: `a > b ? a : b`
+# - In Python this would be:  `a if a > b else b`
+# Remember in Rust that:
+# - the `if` condition does not need to be surrounded by parentheses
+# - `if`/`else` conditionals are expressions
+# - Each condition is followed by a `{}` block."""
 
-# PRIMITIVE TYPES
+# # [[exercises]]
+# # name = "if2"
+# # path = "exercises/if/if2.rs"
+# # mode = "test"
+# # hint = """
+# # For that first compiler error, it's important in Rust that each conditional
+# # block returns the same type! To get the tests passing, you will need a couple
+# # conditions checking different input values."""
+
+# # PRIMITIVE TYPES
+
+# # [[exercises]]
+# # name = "primitive_types1"
+# # path = "exercises/primitive_types/primitive_types1.rs"
+# # mode = "compile"
+# # hint = "No hints this time ;)"
+
+# # [[exercises]]
+# # name = "primitive_types2"
+# # path = "exercises/primitive_types/primitive_types2.rs"
+# # mode = "compile"
+# # hint = "No hints this time ;)"
 
 # [[exercises]]
-# name = "primitive_types1"
-# path = "exercises/primitive_types/primitive_types1.rs"
+# name = "primitive_types3"
+# path = "exercises/primitive_types/primitive_types3.rs"
 # mode = "compile"
-# hint = "No hints this time ;)"
+# hint = """
+# There's a shorthand to initialize Arrays with a certain size that does not
+# require you to type in 100 items (but you certainly can if you want!).
+# For example, you can do:
+# let array = ["Are we there yet?"; 10];
+
+# Bonus: what are some other things you could have that would return true
+# for `a.len() >= 100`?"""
 
 # [[exercises]]
-# name = "primitive_types2"
-# path = "exercises/primitive_types/primitive_types2.rs"
+# name = "primitive_types4"
+# path = "exercises/primitive_types/primitive_types4.rs"
+# mode = "test"
+# hint = """
+# Take a look at the Understanding Ownership -> Slices -> Other Slices section of the book:
+# https://doc.rust-lang.org/book/ch04-03-slices.html
+# and use the starting and ending indices of the items in the Array
+# that you want to end up in the slice.
+
+# If you're curious why the first argument of `assert_eq!` does not
+# have an ampersand for a reference since the second argument is a
+# reference, take a look at the coercion chapter of the nomicon:
+# https://doc.rust-lang.org/nomicon/coercions.html"""
+
+# [[exercises]]
+# name = "primitive_types5"
+# path = "exercises/primitive_types/primitive_types5.rs"
 # mode = "compile"
-# hint = "No hints this time ;)"
+# hint = """
+# Take a look at the Data Types -> The Tuple Type section of the book:
+# https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type
+# Particularly the part about destructuring (second to last example in the section).
+# You'll need to make a pattern to bind `name` and `age` to the appropriate parts
+# of the tuple. You can do it!!"""
 
-[[exercises]]
-name = "primitive_types3"
-path = "exercises/primitive_types/primitive_types3.rs"
-mode = "compile"
-hint = """
-There's a shorthand to initialize Arrays with a certain size that does not
-require you to type in 100 items (but you certainly can if you want!).
-For example, you can do:
-let array = ["Are we there yet?"; 10];
+# [[exercises]]
+# name = "primitive_types6"
+# path = "exercises/primitive_types/primitive_types6.rs"
+# mode = "test"
+# hint = """
+# While you could use a destructuring `let` for the tuple here, try
+# indexing into it instead, as explained in the last example of the
+# Data Types -> The Tuple Type section of the book:
+# https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type
+# Now you have another tool in your toolbox!"""
 
-Bonus: what are some other things you could have that would return true
-for `a.len() >= 100`?"""
+# # VECS
 
-[[exercises]]
-name = "primitive_types4"
-path = "exercises/primitive_types/primitive_types4.rs"
-mode = "test"
-hint = """
-Take a look at the Understanding Ownership -> Slices -> Other Slices section of the book:
-https://doc.rust-lang.org/book/ch04-03-slices.html
-and use the starting and ending indices of the items in the Array
-that you want to end up in the slice.
+# [[exercises]]
+# name = "vecs1"
+# path = "exercises/vecs/vecs1.rs"
+# mode = "test"
+# hint = """
+# In Rust, there are two ways to define a Vector.
+# 1. One way is to use the `Vec::new()` function to create a new vector
+#   and fill it with the `push()` method.
+# 2. The second way, which is simpler is to use the `vec![]` macro and
+#   define your elements inside the square brackets.
+# Check this chapter: https://doc.rust-lang.org/stable/book/ch08-01-vectors.html
+# of the Rust book to learn more.
+# """
 
-If you're curious why the first argument of `assert_eq!` does not
-have an ampersand for a reference since the second argument is a
-reference, take a look at the coercion chapter of the nomicon:
-https://doc.rust-lang.org/nomicon/coercions.html"""
+# [[exercises]]
+# name = "vecs2"
+# path = "exercises/vecs/vecs2.rs"
+# mode = "test"
+# hint = """
+# Hint 1: `i` is each element from the Vec as they are being iterated. Can you try
+# multiplying this?
 
-[[exercises]]
-name = "primitive_types5"
-path = "exercises/primitive_types/primitive_types5.rs"
-mode = "compile"
-hint = """
-Take a look at the Data Types -> The Tuple Type section of the book:
-https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type
-Particularly the part about destructuring (second to last example in the section).
-You'll need to make a pattern to bind `name` and `age` to the appropriate parts
-of the tuple. You can do it!!"""
+# Hint 2: For the first function, there's a way to directly access the numbers stored
+# in the Vec, using the * dereference operator. You can both access and write to the
+# number that way.
 
-[[exercises]]
-name = "primitive_types6"
-path = "exercises/primitive_types/primitive_types6.rs"
-mode = "test"
-hint = """
-While you could use a destructuring `let` for the tuple here, try
-indexing into it instead, as explained in the last example of the
-Data Types -> The Tuple Type section of the book:
-https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type
-Now you have another tool in your toolbox!"""
-
-# VECS
-
-[[exercises]]
-name = "vecs1"
-path = "exercises/vecs/vecs1.rs"
-mode = "test"
-hint = """
-In Rust, there are two ways to define a Vector.
-1. One way is to use the `Vec::new()` function to create a new vector
-  and fill it with the `push()` method.
-2. The second way, which is simpler is to use the `vec![]` macro and
-  define your elements inside the square brackets.
-Check this chapter: https://doc.rust-lang.org/stable/book/ch08-01-vectors.html
-of the Rust book to learn more.
-"""
-
-[[exercises]]
-name = "vecs2"
-path = "exercises/vecs/vecs2.rs"
-mode = "test"
-hint = """
-Hint 1: `i` is each element from the Vec as they are being iterated. Can you try
-multiplying this?
-
-Hint 2: For the first function, there's a way to directly access the numbers stored
-in the Vec, using the * dereference operator. You can both access and write to the
-number that way.
-
-After you've completed both functions, decide for yourself which approach you like
-better. What do you think is the more commonly used pattern under Rust developers?
-"""
+# After you've completed both functions, decide for yourself which approach you like
+# better. What do you think is the more commonly used pattern under Rust developers?
+# """
 
 # MOVE SEMANTICS
 
@@ -351,18 +351,18 @@ Another hint: it has to do with the `&` character."""
 
 # STRUCTS
 
-[[exercises]]
-name = "structs1"
-path = "exercises/structs/structs1.rs"
-mode = "test"
-hint = """
-Rust has more than one type of struct. Three actually, all variants are used to package related data together.
-There are normal (or classic) structs. These are named collections of related data stored in fields.
-Tuple structs are basically just named tuples.
-Finally, Unit-like structs. These don't have any fields and are useful for generics.
+# [[exercises]]
+# name = "structs1"
+# path = "exercises/structs/structs1.rs"
+# mode = "test"
+# hint = """
+# Rust has more than one type of struct. Three actually, all variants are used to package related data together.
+# There are normal (or classic) structs. These are named collections of related data stored in fields.
+# Tuple structs are basically just named tuples.
+# Finally, Unit-like structs. These don't have any fields and are useful for generics.
 
-In this exercise you need to complete and implement one of each kind.
-Read more about structs in The Book: https://doc.rust-lang.org/book/ch05-01-defining-structs.html"""
+# In this exercise you need to complete and implement one of each kind.
+# Read more about structs in The Book: https://doc.rust-lang.org/book/ch05-01-defining-structs.html"""
 
 [[exercises]]
 name = "structs2"
@@ -373,44 +373,44 @@ Creating instances of structs is easy, all you need to do is assign some values 
 There are however some shortcuts that can be taken when instantiating structs.
 Have a look in The Book, to find out more: https://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html#creating-instances-from-other-instances-with-struct-update-syntax"""
 
-[[exercises]]
-name = "structs3"
-path = "exercises/structs/structs3.rs"
-mode = "test"
-hint = """
-The new method needs to panic if the weight is physically impossible :), how do we do that in Rust?
+# [[exercises]]
+# name = "structs3"
+# path = "exercises/structs/structs3.rs"
+# mode = "test"
+# hint = """
+# The new method needs to panic if the weight is physically impossible :), how do we do that in Rust?
 
-For is_international: What makes a package international? Seems related to the places it goes through right?
+# For is_international: What makes a package international? Seems related to the places it goes through right?
 
-For calculate_transport_fees: Bigger is more expensive usually, we don't have size, but something may fit the bill here :)
+# For calculate_transport_fees: Bigger is more expensive usually, we don't have size, but something may fit the bill here :)
 
-Have a look in The Book, to find out more about method implementations: https://doc.rust-lang.org/book/ch05-03-method-syntax.html"""
+# Have a look in The Book, to find out more about method implementations: https://doc.rust-lang.org/book/ch05-03-method-syntax.html"""
 
-# ENUMS
+# # ENUMS
 
-[[exercises]]
-name = "enums1"
-path = "exercises/enums/enums1.rs"
-mode = "compile"
-hint = "No hints this time ;)"
+# [[exercises]]
+# name = "enums1"
+# path = "exercises/enums/enums1.rs"
+# mode = "compile"
+# hint = "No hints this time ;)"
 
-[[exercises]]
-name = "enums2"
-path = "exercises/enums/enums2.rs"
-mode = "compile"
-hint = """
-You can create enumerations that have different variants with different types
-such as no data, anonymous structs, a single string, tuples, ...etc"""
+# [[exercises]]
+# name = "enums2"
+# path = "exercises/enums/enums2.rs"
+# mode = "compile"
+# hint = """
+# You can create enumerations that have different variants with different types
+# such as no data, anonymous structs, a single string, tuples, ...etc"""
 
-[[exercises]]
-name = "enums3"
-path = "exercises/enums/enums3.rs"
-mode = "test"
-hint = """
-As a first step, you can define enums to compile this code without errors.
-and then create a match expression in `process()`. 
-Note that you need to deconstruct some message variants 
-in the match expression to get value in the variant."""
+# [[exercises]]
+# name = "enums3"
+# path = "exercises/enums/enums3.rs"
+# mode = "test"
+# hint = """
+# As a first step, you can define enums to compile this code without errors.
+# and then create a match expression in `process()`. 
+# Note that you need to deconstruct some message variants 
+# in the match expression to get value in the variant."""
 
 # STRINGS
 
@@ -517,14 +517,14 @@ Learn more at https://doc.rust-lang.org/book/ch08-03-hash-maps.html#updating-a-v
 
 # OPTIONS
 
-[[exercises]]
-name = "options1"
-path = "exercises/options/options1.rs"
-mode = "test"
-hint = """
-Options can have a Some value, with an inner value, or a None value, without an inner value.
-There's multiple ways to get at the inner value, you can use unwrap, or pattern match. Unwrapping
-is the easiest, but how do you do it safely so that it doesn't panic in your face later?"""
+# [[exercises]]
+# name = "options1"
+# path = "exercises/options/options1.rs"
+# mode = "test"
+# hint = """
+# Options can have a Some value, with an inner value, or a None value, without an inner value.
+# There's multiple ways to get at the inner value, you can use unwrap, or pattern match. Unwrapping
+# is the easiest, but how do you do it safely so that it doesn't panic in your face later?"""
 
 [[exercises]]
 name = "options2"
@@ -552,35 +552,35 @@ read: https://doc.rust-lang.org/std/keyword.ref.html"""
 
 # ERROR HANDLING
 
-[[exercises]]
-name = "errors1"
-path = "exercises/error_handling/errors1.rs"
-mode = "test"
-hint = """
-`Ok` and `Err` are one of the variants of `Result`, so what the tests are saying
-is that `generate_nametag_text` should return a `Result` instead of an
-`Option`.
+# [[exercises]]
+# name = "errors1"
+# path = "exercises/error_handling/errors1.rs"
+# mode = "test"
+# hint = """
+# `Ok` and `Err` are one of the variants of `Result`, so what the tests are saying
+# is that `generate_nametag_text` should return a `Result` instead of an
+# `Option`.
 
-To make this change, you'll need to:
-   - update the return type in the function signature to be a Result<String, String> that
-     could be the variants `Ok(String)` and `Err(String)`
-   - change the body of the function to return `Ok(stuff)` where it currently
-     returns `Some(stuff)`
-   - change the body of the function to return `Err(error message)` where it
-     currently returns `None`"""
+# To make this change, you'll need to:
+#    - update the return type in the function signature to be a Result<String, String> that
+#      could be the variants `Ok(String)` and `Err(String)`
+#    - change the body of the function to return `Ok(stuff)` where it currently
+#      returns `Some(stuff)`
+#    - change the body of the function to return `Err(error message)` where it
+#      currently returns `None`"""
 
-[[exercises]]
-name = "errors2"
-path = "exercises/error_handling/errors2.rs"
-mode = "test"
-hint = """
-One way to handle this is using a `match` statement on
-`item_quantity.parse::<i32>()` where the cases are `Ok(something)` and
-`Err(something)`. This pattern is very common in Rust, though, so there's
-a `?` operator that does pretty much what you would make that match statement
-do for you! Take a look at this section of the Error Handling chapter:
-https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator
-and give it a try!"""
+# [[exercises]]
+# name = "errors2"
+# path = "exercises/error_handling/errors2.rs"
+# mode = "test"
+# hint = """
+# One way to handle this is using a `match` statement on
+# `item_quantity.parse::<i32>()` where the cases are `Ok(something)` and
+# `Err(something)`. This pattern is very common in Rust, though, so there's
+# a `?` operator that does pretty much what you would make that match statement
+# do for you! Take a look at this section of the Error Handling chapter:
+# https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator
+# and give it a try!"""
 
 [[exercises]]
 name = "errors3"
@@ -722,37 +722,37 @@ To ensure a parameter implements multiple traits use the '+ syntax'. Try replaci
 See the documentation at: https://doc.rust-lang.org/book/ch10-02-traits.html#specifying-multiple-trait-bounds-with-the--syntax
 """
 
-# TESTS
+# # TESTS
 
-[[exercises]]
-name = "tests1"
-path = "exercises/tests/tests1.rs"
-mode = "test"
-hint = """
-You don't even need to write any code to test -- you can just test values and run that, even
-though you wouldn't do that in real life :) `assert!` is a macro that needs an argument.
-Depending on the value of the argument, `assert!` will do nothing (in which case the test will
-pass) or `assert!` will panic (in which case the test will fail). So try giving different values
-to `assert!` and see which ones compile, which ones pass, and which ones fail :)"""
+# [[exercises]]
+# name = "tests1"
+# path = "exercises/tests/tests1.rs"
+# mode = "test"
+# hint = """
+# You don't even need to write any code to test -- you can just test values and run that, even
+# though you wouldn't do that in real life :) `assert!` is a macro that needs an argument.
+# Depending on the value of the argument, `assert!` will do nothing (in which case the test will
+# pass) or `assert!` will panic (in which case the test will fail). So try giving different values
+# to `assert!` and see which ones compile, which ones pass, and which ones fail :)"""
 
-[[exercises]]
-name = "tests2"
-path = "exercises/tests/tests2.rs"
-mode = "test"
-hint = """
-Like the previous exercise, you don't need to write any code to get this test to compile and
-run. `assert_eq!` is a macro that takes two arguments and compares them. Try giving it two
-values that are equal! Try giving it two arguments that are different! Try giving it two values
-that are of different types! Try switching which argument comes first and which comes second!"""
+# [[exercises]]
+# name = "tests2"
+# path = "exercises/tests/tests2.rs"
+# mode = "test"
+# hint = """
+# Like the previous exercise, you don't need to write any code to get this test to compile and
+# run. `assert_eq!` is a macro that takes two arguments and compares them. Try giving it two
+# values that are equal! Try giving it two arguments that are different! Try giving it two values
+# that are of different types! Try switching which argument comes first and which comes second!"""
 
-[[exercises]]
-name = "tests3"
-path = "exercises/tests/tests3.rs"
-mode = "test"
-hint = """
-You can call a function right where you're passing arguments to `assert!` -- so you could do
-something like `assert!(having_fun())`. If you want to check that you indeed get false, you
-can negate the result of what you're doing using `!`, like `assert!(!having_fun())`."""
+# [[exercises]]
+# name = "tests3"
+# path = "exercises/tests/tests3.rs"
+# mode = "test"
+# hint = """
+# You can call a function right where you're passing arguments to `assert!` -- so you could do
+# something like `assert!(having_fun())`. If you want to check that you indeed get false, you
+# can negate the result of what you're doing using `!`, like `assert!(!having_fun())`."""
 
 # LIFETIMES
 
